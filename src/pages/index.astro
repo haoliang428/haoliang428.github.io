@@ -1,0 +1,551 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WorkItem from '../components/WorkItem.astro';
+import EducationItem from '../components/EducationItem.astro';
+import SkillModule from '../components/SkillModule.astro';
+import CertificationItem from '../components/CertificationItem.astro';
+import PublicationItem from '../components/PublicationItem.astro';
+
+const name = "Hao Liang";
+---
+
+<BaseLayout title={`${name} - AI/ML Engineer`}>
+ 
+ <!-- Home Section -->
+ <section id="home" class="content-section">
+   <div class="flex flex-col lg:flex-row gap-12 pb-12 mt-5">
+     <div class="flex-1">
+       <div class="text-xl py-1 font-semibold uppercase tracking-widest text-primary">Hey there 👋</div>
+       <div class="text-5xl font-bold py-2 mt-4 leading-tight">I'm Hao Liang 梁昊</div>
+       <div class="text-3xl py-3 font-bold opacity-70">AI/ML Engineer</div>
+       <div class="py-2 mt-6">
+         <p class="text-lg text-justify leading-relaxed">
+           Specializing in <b>production LLM systems</b>, cloud-native data platforms, and MLOps for large-scale environments. 
+           Experienced in end-to-end system design spanning modeling, optimization, governance, and deployment.
+         </p>
+       </div>
+        <div class="mt-10 flex flex-row flex-wrap items-center gap-3">
+          <a href="https://www.linkedin.com/in/hao-liang-75bb32170/" target="_blank" class="btn btn-outline border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:border-indigo-600 px-6 gap-2">
+            <i data-lucide="linkedin" class="w-4 h-4 pointer-events-none"></i>
+            LinkedIn
+          </a>
+          <div class="tooltip tooltip-bottom" data-tip="Click to copy email">
+            <button class="btn btn-outline border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:border-indigo-600 px-6 gap-2 copy-email-btn"> 
+              <i data-lucide="mail" class="w-4 h-4 pointer-events-none"></i>
+              haoliang428@outlook.com
+            </button>
+          </div>
+          <a href="https://scholar.google.com/citations?user=rM-i678AAAAJ&hl" target="_blank" class="btn btn-outline border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:border-indigo-600 px-6 gap-2">
+            <i data-lucide="graduation-cap" class="w-4 h-4 pointer-events-none"></i>
+            Google Scholar
+          </a>
+        </div>
+      </div>
+     <!-- Personal Photo -->
+     <div class="w-full lg:w-72 shrink-0">
+       <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform lg:rotate-3 hover:rotate-0 transition-transform duration-500">
+         <img src="/personal_photo.jpg" alt="Hao Liang" class="w-full h-auto object-cover aspect-[3/4]" />
+       </div>
+     </div>
+   </div>
+
+   <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16">
+     <div class="lg:col-span-2">
+       <div class="text-3xl w-full font-bold mb-8 border-b-4 border-primary/20 pb-4 inline-block tracking-tight">Core Technical Specializations</div>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+         <!-- Pillar 1 -->
+         <div class="glass p-8 rounded-[2.5rem] border border-white/40 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1 group">
+           <div class="mb-6 flex items-center justify-start transition-transform group-hover:scale-110 duration-500">
+             <i class="devicon-pytorch-original colored text-5xl filter drop-shadow-[0_0_15px_rgba(238,83,59,0.3)]"></i>
+           </div>
+           <h3 class="text-xl font-extrabold text-slate-900 mb-3 leading-tight tracking-tight">Agentic AI & LLM Systems</h3>
+           <p class="text-[13px] text-base-content/70 leading-relaxed font-medium">
+             Architecting production-grade knowledge systems and autonomous workflows using RAG pipelines, prompt engineering, and LLM orchestration.
+           </p>
+         </div>
+
+         <!-- Pillar 2 -->
+         <div class="glass p-8 rounded-[2.5rem] border border-white/40 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1 group">
+           <div class="mb-6 flex items-center justify-start transition-transform group-hover:scale-110 duration-500">
+             <i class="devicon-apachespark-plain colored text-5xl filter drop-shadow-[0_0_15px_rgba(226,98,21,0.3)]"></i>
+           </div>
+           <h3 class="text-xl font-extrabold text-slate-900 mb-3 leading-tight tracking-tight text-balance">Distributed Data Engineering</h3>
+           <p class="text-[13px] text-base-content/70 leading-relaxed font-medium">
+             Designing scalable cloud-native architectures and high-throughput ETL/ELT pipelines to manage complex, high-dimensional datasets.
+           </p>
+         </div>
+
+         <!-- Pillar 3 -->
+         <div class="glass p-8 rounded-[2.5rem] border border-white/40 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1 group">
+           <div class="mb-6 flex items-center justify-start transition-transform group-hover:scale-110 duration-500">
+             <i class="devicon-python-plain colored text-5xl filter drop-shadow-[0_0_15px_rgba(55,118,171,0.3)]"></i>
+           </div>
+           <h3 class="text-xl font-extrabold text-slate-900 mb-3 leading-tight tracking-tight text-balance">Algorithmic Optimization & Decision Logic</h3>
+           <p class="text-[13px] text-base-content/70 leading-relaxed font-medium">
+             Translating multi-dimensional constraints into scalable decision-making logic using graph-based algorithms and mathematical optimization frameworks.
+           </p>
+         </div>
+
+         <!-- Pillar 4 -->
+         <div class="glass p-8 rounded-[2.5rem] border border-white/40 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1 group">
+           <div class="mb-6 flex items-center justify-start transition-transform group-hover:scale-110 duration-500">
+             <i class="devicon-kubernetes-plain colored text-5xl filter drop-shadow-[0_0_15px_rgba(50,109,230,0.3)]"></i>
+           </div>
+           <h3 class="text-xl font-extrabold text-slate-900 mb-3 leading-tight tracking-tight">Production MLOps & Cloud Infrastructure</h3>
+           <p class="text-[13px] text-base-content/70 leading-relaxed font-medium">
+             Managing the end-to-end machine learning lifecycle through containerized microservices, Infrastructure as Code, and automated CI/CD pipelines.
+           </p>
+         </div>
+
+         <!-- Pillar 5 (Wide) -->
+         <div class="glass p-8 rounded-[2.5rem] border border-white/40 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1 md:col-span-2 group">
+           <div class="flex flex-col md:flex-row gap-8 items-start">
+             <div class="transition-transform group-hover:scale-110 duration-500 shrink-0">
+               <i class="devicon-jupyter-plain colored text-6xl filter drop-shadow-[0_0_15px_rgba(243,118,38,0.3)]"></i>
+             </div>
+             <div>
+               <h3 class="text-xl font-extrabold text-slate-900 mb-3 leading-tight tracking-tight">Advanced Predictive Modeling</h3>
+               <p class="text-[13px] text-base-content/70 leading-relaxed font-medium">
+                 Developing statistical and neural architectures for high-fidelity pattern recognition, time-series forecasting, and automated data synthesis.
+               </p>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- Memes Sidebar -->
+     <div class="flex flex-col gap-8">
+       <div>
+         <div class="text-xl font-bold mb-8 opacity-40 uppercase tracking-widest text-center lg:text-left">Spook Distribution</div>         <div class="card bg-base-100 shadow-lg border border-base-200 overflow-hidden group">
+           <figure class="px-4 pt-4">
+             <img src="/meme.jpg" alt="Statistics Meme" class="rounded-xl grayscale group-hover:grayscale-0 transition-all duration-500" />
+           </figure>
+           <div class="card-body p-6 items-center text-center">
+             <p class="text-xs italic opacity-60">"In God we trust, all others must bring data."</p>
+           </div>
+         </div>
+       </div>
+
+       <div>
+         <div class="text-xl font-bold mb-8 opacity-40 uppercase tracking-widest text-center lg:text-left">Developer Reality</div>
+         <div class="card bg-base-100 shadow-lg border border-base-200 overflow-hidden group">
+           <figure class="px-4 pt-4">
+             <img src="/git_push_meme.jpg" alt="Git Push Meme" class="rounded-xl grayscale group-hover:grayscale-0 transition-all duration-500" />
+           </figure>
+           <div class="card-body p-6 items-center text-center">
+             <p class="text-xs italic opacity-60">"It works on my machine... but I don't live on my machine."</p>
+           </div>
+         </div>
+       </div>
+     </div>   </div>
+ </section>
+ <!-- Experience Section -->
+ <section id="experience" class="content-section hidden">
+ <div class="mb-10">
+ <div class="text-3xl w-full font-bold mb-12 border-b-4 border-primary/20 pb-4 inline-block tracking-tight">Professional Experience</div>
+ 
+ 
+ <WorkItem 
+ title="Roche"
+ subtitle="Data Engineer"
+ date="Mar 2024 – Present"
+ location="Branchburg, NJ"
+ logo="/logos/roche.png"
+ summary="Design and deliver end-to-end AI/ML, data engineering, and optimization systems supporting Roche’s R&D and product pipelines"
+ categories={[
+ {
+ name: "AI & LLM Engineering and Optimization",
+ items: [
+ "Architect production-grade LLM knowledge systems by building RAG pipelines and benchmarking NLP models (LDA, BERT, BART) to automate R&D data synthesis",
+ "Integrate evaluation frameworks (Ragas) to quantify retrieval accuracy and generation quality, ensuring high-fidelity outputs for sensitive scientific workflows",
+ "Build OCR and embedding-based parsing pipelines to convert compliance documents into structured data, automating form-filling and reducing manual effort",
+ "Apply graph-based optimization algorithms (e.g., Dijkstra's) to automate combinatorial oligonucleotide design, translating scientific constraints into scalable decision logic",
+ "Optimize manufacturing logistics and reduce line failures using Optimization to balance inventory and production targets"
+ ]
+ },
+ {
+ name: "Data Architecture and Governance",
+ items: [
+ "Engineer Data Vault 2.0 on Snowflake, integrating SAP, MES, and SQL Server sources via Qlik, Talend, and dbt to establish a governed, analytics-ready data foundation",
+ "Build a data governance stack integrating Monte Carlo, Collibra, and Immuta to enable observability, metadata management, and secure access across AI workloads"
+ ]
+ },
+ {
+ name: "Cloud Infrastructure and MLOps",
+ items: [
+ "Modernize production infrastructure by migrating 10+ projects to AWS ECS/Fargate using GitLab CI/CD and Infrastructure as Code (IaC)"
+ ]
+ },
+ {
+ name: "Analytics Platforms & BI Automation",
+ items: [
+ "Pioneer the first Posit Connect Server deployment to host Streamlit applications, replacing manual workflows with containerized, production-ready analytics environments",
+ "Lead multi-site Tableau rollouts by automating ingestion from Monday.com and Smartsheet into Snowflake, improving operational visibility and reporting consistency"
+ ]
+ }
+ ]}
+ />
+ <WorkItem 
+ title="Cisco"
+ subtitle="Data Science Consultant"
+ date="Sep – Dec 2023"
+ location="San Jose, CA"
+ logo="/logos/cisco.png"
+ 
+ 
+ summary="Empowered supply chain teams with an end-to-end analytics platform to detect market shifts and potential disruption risks"
+ bullets={[
+ "Built ELT pipelines to aggregate semiconductor news and commodity price data via web scraping (Beautiful Soup) and external APIs, creating a unified signal layer for downstream analysis",
+ "Leveraged fine-tuned prompt engineering with LLM APIs to automate news summarization and topic modeling",
+ "Distilled risk signals using NLP (NER, sentiment, lemmatization) in NLTK and spaCy, improving intent and risk models",
+ "Developed Tableau dashboards to track emerging risks and support data-driven decisions for supply chain stakeholders"
+ ]}
+ />
+ <WorkItem 
+ title="H-E-B"
+ subtitle="Data Scientist Intern"
+ date="Jun – Aug 2023"
+ location="Austin, TX"
+ logo="/logos/heb.png"
+ 
+ 
+ summary="Applied ML, AI, and optimization to solve large-scale supply chain challenges, improving efficiency and driving innovation"
+ bullets={[
+ "Engineered 100M+ record datasets with PySpark SQL, building scalable ETL pipelines and data-quality checks for forecasting and optimization",
+ "Developed demand forecasting models using time-series methods (e.g., SARIMAX) and deep learning architectures (e.g., GRU, LSTM), incorporating feature-driven signals to capture demand dynamics",
+ "Designed an inventory simulation framework to evaluate policy performance under demand uncertainty and operational constraints; applied Hyperopt to tune forecasting and inventory parameters",
+ "Optimized inventory strategies with Google OR-Tools and heuristics, producing actionable supply-chain recommendations"
+ ]}
+ />
+ <WorkItem 
+ title="Sabre"
+ subtitle="Data Science Consultant"
+ date="Sep 2022 – Jun 2023"
+ location="Dallas, TX"
+ logo="/logos/sabre.svg"
+ 
+ 
+ summary="Developed and deployed statistical and ML solutions to support dynamic pricing and market strategy in the airline industry"
+ bullets={[
+ "Built airline price elasticity models using Poisson Regression, XGBoost, Random Forest, and LSTM, improving demand sensitivity estimation across markets and fare granularities to inform revenue and market entry strategies",
+ "Performed market segmentation using K-means, Agglomerative Clustering, and DBSCAN, enabling personalized prediction and differentiated pricing strategies across customer and route segments",
+ "Architected automated ML pipelines using YAML, Docker, and Python-based UIs for model training and real-time inference, accelerating experimentation cycles and enabling production-grade predictions"
+ ]}
+ />
+ <WorkItem 
+ title="Refinitiv (London Stock Exchange Group)"
+ subtitle="Data Scientist Intern"
+ date="Apr – Jul 2021"
+ location="Beijing, China"
+ logo="/logos/refinitiv.jpg"
+ 
+ 
+ summary="Delivered data-driven insights on user behavior and product engagement to support analytics and platform strategy for Eikon"
+ bullets={[
+ "Design and run A/B experiments on Eikon webpage layouts, driving a 16% increase in Daily Active Users (DAU)",
+ "Build dashboards for bond credit rating monitoring using Python (Bokeh), reaching 5,000+ views in the first month",
+ "Analyze subscriber behavior and retention with R to inform product and marketing strategy",
+ "Authored and delivered Python tutorials on Eikon API usage; trained 1,000+ users in programmatic data access and analysis"
+ ]}
+ />
+ <WorkItem 
+ title="Minsheng Securities"
+ subtitle="Data Analyst Intern"
+ date="Aug – Oct 2020"
+ location="Beijing, China"
+ logo="/logos/minsheng.png"
+ 
+ 
+ summary="Built data pipelines, analytical models, and forecasting tools to inform trading and client-profitability analysis"
+ bullets={[
+ "Built and maintained ETL pipelines for Private Placement transaction data using SQL, extracting key trading and client metrics; performed feature engineering and exploratory data analysis in Python to prepare modeling-ready datasets",
+ "Developed time-series forecasting models (e.g., ARIMA) in R (forecast) to predict Private Placement trading volume, achieving a MAPE of approximately 15% and supporting short-term market activity planning",
+ "Analyzed client profitability and portfolio relationships using factor-exposure analysis to identify concentration risk",
+ "Translated analytical findings into structured insights for stakeholders, informing trading and investment decisions"
+ ]}
+ />
+ <WorkItem 
+ title="Dongxing Securities"
+ subtitle="Risk Data Analyst Intern"
+ date="Jun – Aug 2020"
+ location="Beijing, China"
+ logo="/logos/dongxing.png"
+ 
+ lastItem={true}
+ summary="Applied quantitative modeling and analytics to assess portfolio risk, support equity research, and inform client investment insights"
+ bullets={[
+ "Quantified portfolio risk by computing and comparing VaR and ES, enabling robust cross-method risk assessment",
+ "Developed risk analysis workflows to evaluate portfolio sensitivity under different market scenarios, synthesizing results into structured risk assessment reports for internal teams and external clients",
+ "Performed equity valuation and factor analysis, implementing Discounted Cash Flow (DCF) models and estimating equity beta via linear regression in R to support fundamental research and risk-adjusted return analysis",
+ "Built visualizations to analyze stock-price dynamics and key indicators (RSI, MACD) for equity-research insight"
+ ]}
+ />
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Education Section -->
+ <section id="education" class="content-section hidden">
+   <div class="mb-10">
+     <div class="text-3xl w-full font-bold mb-12 border-b-4 border-primary/20 pb-4 inline-block tracking-tight">Education</div>
+     
+       
+         <EducationItem 
+           school="Northwestern University"
+           degree="M.S. in Machine Learning and Data Science"
+           date="Sep 2022 – Dec 2023"
+           location="Evanston, IL"
+           logo="/logos/northwestern.jpg"
+           gpa="3.95/4.00"
+         />
+         <EducationItem 
+           school="University of Wisconsin – Madison"
+           degree="B.S. in Statistics & B.S. in Economics"
+           date="Sep 2018 – Dec 2021"
+           location="Madison, WI"
+           logo="/logos/uwmadison.jpg"
+           gpa="4.00/4.00"
+           honors="Lenell Goodman Ammerman Scholarship in Economics"
+           lastItem={true}
+         />
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <!-- Research Section -->
+ <section id="research" class="content-section hidden">
+    <div class="mb-10">
+      <div class="text-3xl w-full font-bold mb-12 border-b-4 border-primary/20 pb-4 inline-block tracking-tight">Research & Insights</div>
+      
+      <!-- Publications first -->
+      <div class="space-y-4 mb-16">
+        <div class="text-xl font-bold mb-8 opacity-40 uppercase tracking-[0.2em] flex items-center gap-3">
+          <i data-lucide="book-open" class="w-5 h-5"></i>
+          Publications & Conference Proceedings
+        </div>
+        <PublicationItem 
+          title="Value effect of AI innovation zones: Green premium and cost reduction pathways in environmental disclosure"
+          authors="Liu M., Zhang W., & Liang H."
+          journal="Research in International Business and Finance"
+          date="2026"
+        />
+        <PublicationItem 
+          title="Quantifying the Environmental Impact of Electric Vehicle Adoption"
+          authors="Liang, H. & Hernke M."
+          conference="International Conference on Frontiers of Energy and Environment Engineering (CFEEE)"
+          date="2024"
+        />
+        <PublicationItem 
+          title="The Forecast Ability of a Belief-Based Momentum Indicator in Full-Day, Daytime, and Nighttime Volatilities of Chinese Oil Futures"
+          authors="Li, Y., Huynh, L., Xu, Y., & Liang, H."
+          journal="Energy Economics"
+          date="2023"
+        />
+      </div>
+
+      <!-- Journal Reviewer Section (Single Column) -->
+      <div class="mb-16">
+        <div class="text-xl font-bold mb-8 opacity-40 uppercase tracking-[0.2em] flex items-center gap-3">
+          <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+          Journal Peer Reviewer
+        </div>
+        <div class="glass p-10 rounded-[2.5rem] border border-white/40 shadow-sm">
+          <div class="flex flex-col gap-y-6">
+            {[
+              "Journal of Innovation & Knowledge",
+              "Finance Research Letters",
+              "International Review of Financial Analysis",
+              "Research in International Business and Finance",
+              "International Review of Economics and Finance",
+              "Evaluation Review",
+              "International Finance",
+              "Review of Accounting and Finance",
+              "Humanities and Social Sciences Communications"
+            ].map((journal) => (
+              <div class="flex items-center gap-4 group/journal transition-all">
+                <div class="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center text-primary group-hover/journal:bg-primary group-hover/journal:text-white transition-all duration-300">
+                  <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <span class="text-[15px] font-medium text-base-content/80 group-hover/journal:text-primary transition-colors">{journal}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Research Experiences -->
+      <div class="space-y-4">
+        <div class="text-xl font-bold mb-8 opacity-40 uppercase tracking-[0.2em] flex items-center gap-3">
+          <i data-lucide="microscope" class="w-5 h-5"></i>
+          Research Experience
+        </div>
+        <WorkItem 
+          title="University of Wisconsin – Madison"
+          subtitle="Research Assistant (Prof. Michael Hernke)"
+          date="Sep 2019 – Dec 2021"
+          location="Madison, WI"
+          logo="/logos/wsb.gif"
+          summary="Wisconsin School of Business"
+          bullets={[
+            "Constructed a break-even analytical framework to investigate the Jevons’ Paradox threshold, quantifying the energy-efficiency gains required to achieve net environmental savings in alternative energy vehicle markets",
+            "Designed and executed a multi-source data integration architecture, harmonizing high-dimensional datasets from state and federal agencies to establish normalized energy features for longitudinal econometric analysis",
+            "Utilized input-output analysis to model ecological footprints, establishing a quantitative framework for assessing cross-sectoral environmental impacts of emerging transportation technologies",
+            "Authored peer-reviewed research on the rebound effect in EV adoption, presented at international conferences"
+          ]}
+        />
+        <WorkItem 
+          title="University of Wisconsin – Madison"
+          subtitle="Research Assistant (Prof. Margie Rosenberg)"
+          date="Sep 2019 – May 2020"
+          location="Madison, WI"
+          logo="/logos/wsb.gif"
+          summary="Wisconsin School of Business"
+          bullets={[
+            "Implemented a Difference-in-Differences (DiD) model to quantify the causal effect of economic downturns on population-level health indicators across demographic cohorts",
+            "Engineered a harmonized longitudinal database from 20+ public health surveys (including BRFSS and NHANES) using survey-weighted adjustments and cell-based weighting",
+            "Authored the research proposal defining the technical methodology and led the initial data-engineering architecture"
+          ]}
+          lastItem={true}
+        />
+      </div>
+    </div>
+ </section>
+ <!-- Skills Section -->
+ <section id="skills" class="content-section hidden">
+   <div class="mb-10">
+     <div class="text-3xl w-full font-bold mb-12 border-b-4 border-primary/20 pb-4 inline-block tracking-tight">Technical Toolkit</div>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+       <SkillModule 
+         title="AI, ML & LLM Systems"
+         icon="brain-circuit"
+         skills={[
+           { name: "PyTorch", icon: "devicon-pytorch-original colored" },
+           { name: "TensorFlow", icon: "devicon-tensorflow-original colored" },
+           { name: "Keras", icon: "devicon-keras-plain colored" },
+           { name: "Hugging Face", icon: "devicon-huggingface-plain colored" },
+           { name: "scikit-learn", icon: "devicon-scikitlearn-plain colored" },
+           { name: "LangChain", lucide: "link-2" },
+           { name: "LlamaIndex", lucide: "search" },
+           { name: "Ragas", lucide: "check-check" },
+           { name: "Pinecone", lucide: "tree-pine" },
+           { name: "DeepSpeed", lucide: "zap" },
+           { name: "RLlib", lucide: "target" },
+           { name: "Ollama", lucide: "container" },
+           { name: "Dify", lucide: "workflow" },
+           { name: "statsmodels", icon: "devicon-jupyter-plain colored" }
+         ]}
+       />
+       <SkillModule 
+         title="Programming Languages"
+         icon="code-2"
+         skills={[
+           { name: "Python", icon: "devicon-python-plain colored" },
+           { name: "Java", icon: "devicon-java-plain colored" },
+           { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+           { name: "TypeScript", icon: "devicon-typescript-plain colored" },
+           { name: "SQL", icon: "devicon-azuresqldatabase-plain colored" },
+           { name: "R", icon: "devicon-r-plain colored" },
+           { name: "Stata", lucide: "line-chart" },
+           { name: "HTML/CSS", icon: "devicon-html5-plain colored" }
+         ]}
+       />
+       <SkillModule 
+         title="Data Engineering & Platforms"
+         icon="database"
+         skills={[
+           { name: "Snowflake", icon: "devicon-snowflake-plain colored" },
+           { name: "Databricks", icon: "devicon-databricks-plain colored" },
+           { name: "Spark", icon: "devicon-apachespark-plain colored" },
+           { name: "Hive", icon: "devicon-hadoop-plain colored" },
+           { name: "Kafka", icon: "devicon-apachekafka-plain colored" },
+           { name: "MySQL", icon: "devicon-mysql-plain colored" },
+           { name: "MongoDB", icon: "devicon-mongodb-plain colored" },
+           { name: "Redis", icon: "devicon-redis-plain colored" },
+           { name: "Elasticsearch", icon: "devicon-elasticsearch-plain colored" },
+           { name: "dbt", icon: "devicon-dbt-plain colored" },
+           { name: "Talend", lucide: "refresh-cw" },
+           { name: "Qlik", icon: "si-qlik colored" }
+         ]}
+       />
+       <SkillModule 
+         title="Cloud & DevOps"
+         icon="cloud"
+         skills={[
+           { name: "AWS", icon: "devicon-amazonwebservices-plain-wordmark colored" },
+           { name: "Docker", icon: "devicon-docker-plain colored" },
+           { name: "GitLab CI/CD", icon: "devicon-gitlab-plain colored" },
+           { name: "Linux", icon: "devicon-linux-plain colored" },
+           { name: "IaC", lucide: "binary" }
+         ]}
+       />
+       <SkillModule 
+         title="Web & Application Frameworks"
+         icon="layout"
+         skills={[
+           { name: "Node.js", icon: "devicon-nodejs-plain colored" },
+           { name: "React.js", icon: "devicon-react-original colored" },
+           { name: "Streamlit", icon: "devicon-streamlit-plain colored" },
+           { name: "R Shiny", icon: "devicon-r-plain colored" },
+           { name: "FastAPI", icon: "devicon-fastapi-plain colored" },
+           { name: "Express", icon: "devicon-express-original" }
+         ]}
+       />
+       <SkillModule 
+         title="Data Visualization & BI"
+         icon="bar-chart-3"
+         skills={[
+           { name: "Tableau", icon: "si-tableau colored" },
+           { name: "Power BI", icon: "si-powerbi colored" },
+           { name: "D3.js", icon: "devicon-d3js-plain colored" },
+           { name: "Matplotlib", icon: "devicon-python-plain colored" },
+           { name: "Seaborn", lucide: "spline" },
+           { name: "Plotly", lucide: "scatter-chart" },
+           { name: "Bokeh", lucide: "aperture" },
+           { name: "Vega-Lite", lucide: "area-chart" },
+           { name: "ggplot2", icon: "devicon-r-plain colored" }
+         ]}
+       />
+     </div>
+   </div>
+ </section>
+
+ <!-- Certifications Section -->
+ <section id="certifications" class="content-section hidden">
+   <div class="mb-10">
+     <div class="text-3xl w-full font-bold mb-12 border-b-4 border-primary/20 pb-4 inline-block tracking-tight">Certifications</div>
+     
+       
+         <CertificationItem 
+           title="Certificate in Sustainable Investing"
+           issuer="CFA Institute (formerly ESG Investing)"
+           date="Nov 2024"
+           logo="/logos/cfa.png"
+         />
+         <CertificationItem 
+           title="Financial Risk Manager (FRM)"
+           issuer="Global Association of Risk Professionals (GARP)"
+           date="Aug 2024"
+           logo="/logos/garp.jpg"
+           lastItem={true}
+         />
+       </div>
+     </div>
+   </div>
+ </section>
+</BaseLayout>
+
+<style is:global>
+ .content-section {
+ animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+ }
+ @keyframes fadeIn {
+ from { opacity: 0; transform: translateY(15px); }
+ to { opacity: 1; transform: translateY(0); }
+ }
+ 
+ b {
+ color: var(--p);
+ }
+</style>

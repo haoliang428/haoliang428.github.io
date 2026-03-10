@@ -1,0 +1,246 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Devicon for Tech Logos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <!-- Simple Icons for Enterprise Logos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@v13/font/simple-icons.min.css">
+  </head>
+  <body class="bg-base-200">
+    <div class="drawer lg:drawer-open">
+      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content flex flex-col bg-base-100">
+        <!-- Navbar for mobile -->
+        <div class="sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 bg-base-100 text-base-content shadow-sm lg:hidden">
+          <div class="navbar">
+            <div class="navbar-start">
+              <label for="my-drawer" class="btn btn-square btn-ghost drawer-button">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+              </label>
+            </div>
+            <div class="navbar-center">
+              <a class="btn btn-ghost normal-case text-xl">Hao Liang</a>
+            </div>
+            <div class="navbar-end"></div>
+          </div>
+        </div>
+        
+        <!-- Page Content -->
+        <div class="md:flex md:justify-center">
+          <main class="p-6 pt-10 lg:max-w-[900px] max-w-[100vw]">
+            <slot />
+          </main>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="drawer-side z-40">
+        <label for="my-drawer" class="drawer-overlay"></label>
+        <aside class="h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col">
+          <!-- Profile Section -->
+          <div class="flex flex-col items-center text-center pt-10 pb-6 px-6 w-full">
+            <!-- Photo Container -->
+            <div class="w-[8.5rem] h-[8.5rem] rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 bg-primary flex items-center justify-center overflow-hidden shadow-lg transition ease-in-out hover:scale-[105%] mb-6 shrink-0">
+              <img src="/profile.jpg" alt="Hao Liang Profile" class="w-full h-full object-cover scale-[1.18] object-[center_20%]" />
+            </div>
+            
+            <!-- Identity Info -->
+            <div class="flex flex-col items-center justify-center w-full">
+              <h1 class="text-2xl font-bold tracking-tight text-base-content leading-none whitespace-nowrap">Hao Liang</h1>
+              <p class="text-sm opacity-60 font-medium mt-2">AI/ML Engineer</p>
+              <div class="flex items-center justify-center gap-1.5 mt-3 text-[10px] opacity-40 font-black uppercase tracking-[0.2em] w-full">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>
+                <span class="whitespace-nowrap">New York, NY, US</span>
+              </div>
+            </div>
+
+            <!-- Action Button -->
+            <div class="mt-7 w-full max-w-[14rem] flex flex-col items-center gap-4">
+              <a href="/Hao_Liang_CV.pdf" download="Hao Liang_CV.pdf" target="_blank" class="btn btn-primary btn-outline btn-sm w-full gap-2 rounded-xl shadow-sm border-2">
+                <i data-lucide="download" class="w-4 h-4"></i>
+                Download CV
+              </a>              
+              <!-- Sidebar Social Links -->
+              <div class="flex items-center justify-center gap-3 w-full">
+                <a href="https://www.linkedin.com/in/hao-liang-75bb32170/" target="_blank" class="btn btn-ghost btn-circle btn-sm hover:bg-primary/10 hover:text-primary transition-all" title="LinkedIn">
+                  <i data-lucide="linkedin" class="w-5 h-5 pointer-events-none"></i>
+                </a>
+                <div class="tooltip tooltip-bottom" data-tip="Click to copy email">
+                  <button class="btn btn-ghost btn-circle btn-sm hover:bg-primary/10 hover:text-primary transition-all copy-email-btn">
+                    <i data-lucide="mail" class="w-5 h-5 pointer-events-none"></i>
+                  </button>
+                </div>
+                <a href="https://scholar.google.com/citations?user=rM-i678AAAAJ&hl" target="_blank" class="btn btn-ghost btn-circle btn-sm hover:bg-primary/10 hover:text-primary transition-all" title="Google Scholar">
+                  <i data-lucide="graduation-cap" class="w-5 h-5 pointer-events-none"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <ul class="menu grow shrink menu-md overflow-y-auto px-4 w-full">
+            <li>
+              <a class="py-3 text-base flex gap-4 items-center" data-section-link="home">
+                <i data-lucide="home" class="w-5 h-5"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a class="py-3 text-base flex gap-4 items-center" data-section-link="experience">
+                <i data-lucide="briefcase" class="w-5 h-5"></i>
+                Experience
+              </a>
+            </li>
+            <li>
+              <a class="py-3 text-base flex gap-4 items-center" data-section-link="education">
+                <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                Education
+              </a>
+            </li>
+            <li>
+              <a class="py-3 text-base flex gap-4 items-center" data-section-link="research">
+                <i data-lucide="microscope" class="w-5 h-5"></i>
+                Research
+              </a>
+            </li>
+            <li>
+              <a class="py-3 text-base flex gap-4 items-center" data-section-link="skills">
+                <i data-lucide="code-2" class="w-5 h-5"></i>
+                Skills
+              </a>
+            </li>
+            <li>
+              <a class="py-3 text-base flex gap-4 items-center" data-section-link="certifications">
+                <i data-lucide="award" class="w-5 h-5"></i>
+                Certifications
+              </a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+    
+    <script>
+      function setupNavigation() {
+        // @ts-ignore
+        if (window.lucide) {
+          // @ts-ignore
+          window.lucide.createIcons();
+        }
+        
+        const links = document.querySelectorAll('[data-section-link]');
+        const sections = document.querySelectorAll('.content-section');
+        const drawerToggle = document.getElementById('my-drawer') as HTMLInputElement;
+
+        function showSection(id: string) {
+          console.log('Switching to section:', id);
+          sections.forEach(s => {
+            if (s.id === id) {
+              s.classList.remove('hidden');
+              s.classList.add('block');
+            } else {
+              s.classList.add('hidden');
+              s.classList.remove('block');
+            }
+          });
+          
+          links.forEach(l => {
+            if (l.getAttribute('data-section-link') === id) {
+              l.classList.add('active', 'bg-primary', 'text-white');
+            } else {
+              l.classList.remove('active', 'bg-primary', 'text-white');
+            }
+          });
+
+          // Close drawer on mobile
+          if (drawerToggle && drawerToggle.checked) {
+            drawerToggle.checked = false;
+          }
+          
+          // Re-init icons for newly shown content
+          // @ts-ignore
+          if (window.lucide) {
+            // @ts-ignore
+            window.lucide.createIcons();
+          }
+
+          // Scroll to top of content
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        links.forEach(l => {
+          l.addEventListener('click', (e) => {
+            e.preventDefault();
+            const id = l.getAttribute('data-section-link');
+            if (id) {
+              showSection(id);
+              // Update URL hash without jumping
+              history.pushState(null, '', `#${id}`);
+            }
+          });
+        });
+
+        // Handle initial load from hash or default
+        const hash = window.location.hash.replace('#', '');
+        if (hash && document.getElementById(hash)) {
+          showSection(hash);
+        } else {
+          showSection('home');
+        }
+      }
+
+      function setupEmailCopy() {
+        const copyBtns = document.querySelectorAll('.copy-email-btn');
+        const email = "haoliang428@outlook.com";
+
+        copyBtns.forEach(btn => {
+          btn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            try {
+              await navigator.clipboard.writeText(email);
+              
+              const tooltip = btn.closest('.tooltip');
+              if (tooltip) {
+                const originalTip = tooltip.getAttribute('data-tip');
+                tooltip.setAttribute('data-tip', 'Copied!');
+                tooltip.classList.add('tooltip-open', 'tooltip-primary');
+                
+                setTimeout(() => {
+                  tooltip.setAttribute('data-tip', originalTip || 'Click to copy email');
+                  tooltip.classList.remove('tooltip-open', 'tooltip-primary');
+                }, 2000);
+              }
+            } catch (err) {
+              console.error('Failed to copy!', err);
+            }
+          });
+        });
+      }
+
+      // Run on initial load
+      setupNavigation();
+      setupEmailCopy();
+
+      // Run on Astro page transitions (if any)
+      document.addEventListener('astro:after-swap', () => {
+        setupNavigation();
+        setupEmailCopy();
+      });
+    </script>
+  </body>
+</html>

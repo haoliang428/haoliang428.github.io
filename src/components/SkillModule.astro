@@ -1,0 +1,48 @@
+---
+interface Skill {
+  name: string;
+  icon?: string; // CSS class for Devicon or Simple Icons
+  lucide?: string; // Name for Lucide icon
+}
+
+interface Props {
+  title: string;
+  icon: string; // Lucide icon for the category
+  skills: (string | Skill)[];
+}
+
+const { title, icon, skills } = Astro.props;
+---
+
+<div class="card bg-base-100 shadow-xl border border-base-200 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 group">
+  <div class="card-body p-8">
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm">
+        <i data-lucide={icon} class="w-6 h-6"></i>
+      </div>
+      <h3 class="font-bold text-xl text-base-content tracking-tight">{title}</h3>
+    </div>
+    <div class="flex flex-wrap gap-3">
+      {skills.map((skill) => {
+        const name = typeof skill === 'string' ? skill : skill.name;
+        const skillIcon = typeof skill === 'string' ? null : skill.icon;
+        const lucideIcon = typeof skill === 'string' ? null : skill.lucide;
+        
+        return (
+          <div class="flex items-center gap-2 px-3 py-2 bg-base-200 text-base-content/70 rounded-xl text-[13px] font-bold border border-base-300 hover:border-primary/30 hover:text-primary transition-all cursor-default shadow-sm group/skill">
+            {skillIcon && (
+              <i class={`${skillIcon} text-lg group-hover/skill:scale-110 transition-transform`}></i>
+            )}
+            {lucideIcon && (
+              <i data-lucide={lucideIcon} class="w-4 h-4 group-hover/skill:scale-110 transition-transform"></i>
+            )}
+            {!skillIcon && !lucideIcon && (
+              <div class="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover/skill:bg-primary transition-colors"></div>
+            )}
+            <span>{name}</span>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</div>
