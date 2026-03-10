@@ -1,44 +1,88 @@
-# Astro Starter Kit: Minimal
+# Hao Liang's Personal Website 🚀
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Welcome to my professional portfolio! This website showcases my experience, education, research, and skills as an AI/ML Engineer.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+**Live Site**: [https://haoliang428.github.io/](https://haoliang428.github.io/)
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠️ Tech Stack
+
+This project is built with a focus on speed, scalability, and modern design:
+
+- **Framework**: [Astro](https://astro.build/) (Static Site Generator)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) + [daisyUI](https://daisyui.com/) (Component Library)
+- **Icons**: [Lucide](https://lucide.dev/) + [Devicons](https://devicon.dev/)
+- **Architecture**: Single-Page (SPA) pattern for seamless navigation
+- **Deployment**: [GitHub Actions](https://github.com/features/actions) to GitHub Pages
+
+---
+
+## 🏗️ Core Specializations
+
+The site highlights my expertise in:
+- **Agentic AI & LLM Systems**: RAG pipelines, autonomous workflows, and LLM orchestration.
+- **Distributed Data Engineering**: Scalable cloud-native architectures and ETL/ELT pipelines.
+- **Algorithmic Optimization**: Mathematical optimization and graph-based decision logic.
+- **Production MLOps**: Containerized microservices and automated CI/CD.
+- **Advanced Predictive Modeling**: Statistical and neural architectures for forecasting.
+
+---
+
+## 📂 Project Structure
 
 ```text
 /
-├── public/
+├── public/              # Static assets (images, logos, CV)
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/     # Reusable UI components (WorkItem, EducationItem, etc.)
+│   ├── layouts/        # Page skeletons (BaseLayout.astro)
+│   ├── pages/          # Individual pages (index.astro)
+│   └── styles/         # Global styles and Tailwind configuration
+├── .github/workflows/   # CI/CD deployment logic
+├── astro.config.mjs     # Astro & Vite configuration
+└── package.json         # Project dependencies and scripts
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🚀 Getting Started
 
-Any static assets, like images, can be placed in the `public/` directory.
+To run the project locally, follow these steps:
 
-## 🧞 Commands
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/haoliang428/haoliang428.github.io.git
+   cd haoliang428.github.io
+   ```
 
-All commands are run from the root of the project, from a terminal:
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:4321](http://localhost:4321) in your browser.
 
-## 👀 Want to learn more?
+4. **Build for production**:
+   ```bash
+   npm run build
+   ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-\n\n---\nLast Deployed: Tue Mar 10 00:24:28 EDT 2026
+---
+
+## 🚢 Deployment
+
+This site is automatically deployed to **GitHub Pages** via GitHub Actions. Any push to the `main` branch will trigger a new build and update the live site.
+
+- **Workflow**: `.github/workflows/deploy.yml`
+- **Settings**: Ensure **Settings > Pages > Source** is set to **GitHub Actions**.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
